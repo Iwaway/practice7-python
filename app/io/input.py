@@ -24,6 +24,8 @@ def read_text_from_file(filename):
             return file.read()
     except FileNotFoundError:
         print(f"Error: File with name {filename} not found.")
+    except UnicodeDecodeError:
+        print(f"Error: File with name {filename} have incorrect datatype.")
 
 def read_text_from_file_pd(filename):
     """
@@ -40,3 +42,5 @@ def read_text_from_file_pd(filename):
         return data.to_string(index=False)
     except FileNotFoundError:
         print(f"Error: File with name {filename} not found.")
+    except UnicodeDecodeError:
+        print(f"Error: File with name {filename} have incorrect datatype.")
